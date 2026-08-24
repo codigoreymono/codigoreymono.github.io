@@ -1,8 +1,8 @@
 import { describe, expect, test } from "bun:test";
 import {
 	buildProjectFromUrl,
-	parseRepoUrl,
 	type GHRepo,
+	parseRepoUrl,
 } from "./lib/project.ts";
 
 describe("parseRepoUrl", () => {
@@ -70,7 +70,10 @@ describe("buildProjectFromUrl", () => {
 	});
 
 	test("uses provided url as-is", () => {
-		const project = buildProjectFromUrl(mockRepo, "https://github.com/owner/repo");
+		const project = buildProjectFromUrl(
+			mockRepo,
+			"https://github.com/owner/repo",
+		);
 		expect(project.url).toBe("https://github.com/owner/repo");
 		expect(project.repo).toBe("github.com/owner/repo");
 	});
