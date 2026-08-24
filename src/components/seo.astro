@@ -26,25 +26,25 @@ const ogImage = image
   : new URL(site.image, site.url).href;
 
 const sameAs = [
-	social.github && `https://github.com/${social.github}`,
-	social.twitter && `https://twitter.com/${social.twitter}`,
-	social.linkedin && `https://linkedin.com/in/${social.linkedin}`,
+  social.github && `https://github.com/${social.github}`,
+  social.twitter && `https://twitter.com/${social.twitter}`,
+  social.linkedin && `https://linkedin.com/in/${social.linkedin}`,
 ].filter(Boolean);
 
 const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebSite",
-	name: site.title,
-	url: site.url,
-	description: desc,
-	image: ogImage,
-	author: {
-		"@type": "Person",
-		name: site.author,
-		jobTitle: site.job_title,
-		url: site.url,
-		sameAs,
-	},
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.title,
+  url: site.url,
+  description: desc,
+  image: ogImage,
+  author: {
+    "@type": "Person",
+    name: site.author,
+    jobTitle: site.job_title,
+    url: site.url,
+    sameAs,
+  },
 };
 ---
 
@@ -81,4 +81,8 @@ const jsonLd = {
 <meta name="author" content={site.author}>
 
 <!-- Structured data -->
-<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(jsonLd)}
+/>

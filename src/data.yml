@@ -1,7 +1,7 @@
 site:
   title: astro-distro
   description: Astro + Tailwind fastfetch-style portfolio template. TUI components, themeable systems, projects synced from GitHub via YAML.
-  url: https://astro-distro.pages.dev
+  url: https://example.com
   author: astro
   handle_suffix: distro
   image: /og.png
@@ -10,7 +10,7 @@ site:
   theme_color: '#1793d1'
   job_title: astro-distro template
   social:
-    github: ansango/astro-distro
+    github: ''
   twitter: ''
   locale: en
   type: website
@@ -107,18 +107,18 @@ uses:
     headphones: generic
     monitor: 2 x 27" 1440p
 contact:
-  command: mutt -f ansango@dev
-  email: ansango@dev
+  command: mutt -f user@example.com
+  email: user@example.com
   inbox:
-    - from: github.com/ansango
-      date: 15 Aug 2014
-      href: https://github.com/ansango
-    - from: hola@ansango.com
-      date: 10 Jan 2019
-      href: mailto:hola@ansango.com
-    - from: ansango.com
-      date: 10 Jan 2019
-      href: https://ansango.com
+    - from: github.com
+      date: 15 Aug 2024
+      href: https://github.com
+    - from: hello@example.com
+      date: 10 Jan 2025
+      href: mailto:hello@example.com
+    - from: example.com
+      date: 10 Jan 2025
+      href: https://example.com
   hints:
     - key: j/k
       action: next
@@ -130,4 +130,4 @@ projects_ui:
   command: ranger /home/astro/projects
   root: /home/astro
 projects:
-  - https://github.com/ansango/astro-distro
+  - https://github.com/withastro/astro
