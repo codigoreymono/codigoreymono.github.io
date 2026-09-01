@@ -1,18 +1,21 @@
-# Portfolio
+# Andres Contreras — Portfolio
 
-Personal portfolio focused on Data Engineering projects, skills, and technologies.
+Personal portfolio focused on Data Engineering, built as a lightweight static website with semantic HTML and modern CSS.
+
+## Live Site
+
+https://codigoreymono.github.io
 
 ## About
 
-This repository contains the source code for my personal portfolio.
+This portfolio showcases my projects, technical skills, and learning journey focused on Data Engineering.
 
-The website is built as a lightweight static site using semantic HTML, CSS, and vanilla JavaScript, without unnecessary frameworks or dependencies.
+The site was intentionally built without frameworks or unnecessary dependencies, keeping the project simple, fast, and easy to maintain.
 
-## Tech Stack
+## Technologies
 
 - HTML5
 - CSS3
-- JavaScript
 - Git
 - GitHub Pages
 
@@ -25,8 +28,6 @@ The website is built as a lightweight static site using semantic HTML, CSS, and 
 │   └── images/
 ├── css/
 │   └── styles.css
-├── js/
-│   └── main.js
 ├── .gitignore
 ├── index.html
 └── README.md
