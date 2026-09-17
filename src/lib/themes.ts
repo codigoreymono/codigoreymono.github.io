@@ -1,10 +1,8 @@
 /**
- * Única lista de distros del sitio: de aquí salen los logos que se piden a
- * fastfetch (components/logos), los slugs de `data-theme` (styles/themes.css)
- * y el contenido que varía por distro.
+ * Theme configuration for the site.
  *
- * La fuente de verdad es `src/systems.yml` → `src/config.json`; este módulo
- * solo añade los tipos que TypeScript necesita y el `DEFAULT_THEME` desde `site`.
+ * The source of truth is `src/systems.yml` → `src/config.json`.
+ * Each system defines a theme slug, font and color palette.
  */
 import config from "@/config.json";
 

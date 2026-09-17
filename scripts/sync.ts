@@ -64,19 +64,7 @@ interface Data {
 		type: string;
 		footer?: {
 			status: string;
-			errors: number;
-			warnings: number;
-			uptime: string;
 		};
-	};
-	current: string;
-	booted_at: string;
-	host: {
-		name: string;
-		cpu: string;
-		gpu: string;
-		memory: string;
-		resolution: string;
 	};
 	about: {
 		command: string;
@@ -255,15 +243,6 @@ async function main() {
 
 	const config = {
 		site: data.site,
-		current: {
-			slug: data.current,
-			booted_at: data.booted_at,
-			host: data.host.name,
-			cpu: data.host.cpu,
-			gpu: data.host.gpu,
-			memory: data.host.memory,
-			resolution: data.host.resolution,
-		},
 		systems,
 		sections: {
 			about: {

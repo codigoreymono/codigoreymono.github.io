@@ -1,6 +1,6 @@
 site:
   title: Andrés Contreras
-  description: Data Engineer and Mechatronics Engineer. Python, SQL, Linux, NixOS.
+  description: Data Engineer and Mechatronics Engineer. Python, SQL, Linux and NixOS.
   url: https://example.com
   author: Andrés Contreras
   handle_suffix: ''
@@ -9,27 +9,18 @@ site:
   image_height: 630
   theme_color: '#7ebae4'
   job_title: Data Engineer
+
   social:
-    github: ''
+    github: codigoreymono
+    linkedin: juan-andres-contreras-arias-871375192
+
   twitter: ''
   locale: en
   type: website
   default_theme: nixos
+
   footer:
-    status: session closed
-    errors: 0
-    warnings: 0
-    uptime: 5y
-
-current: nixos
-booted_at: '2026-08-20T10:00:00Z'
-
-host:
-  name: devbox
-  cpu: AMD Ryzen 7 7700
-  gpu: AMD Radeon RX 7700 XT
-  memory: 32 GB DDR5
-  resolution: 2560x1440
+    status: session active
 
 about:
   command: lazygit --view bio
