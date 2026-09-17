@@ -5,7 +5,7 @@
     panel: '#0c1118'
     border: '#161e2a'
     fg: '#d8d8d8'
-    dim: '#5b6775'
+    dim: '#747e8a'
     accent: '#5277c3'
 
 - slug: arch
@@ -15,7 +15,7 @@
     panel: '#0e1014'
     border: '#1a1d22'
     fg: '#d8d8d8'
-    dim: '#5e6470'
+    dim: '#787d87'
     accent: '#1793d1'
 
 - slug: debian
@@ -25,7 +25,7 @@
     panel: '#140d11'
     border: '#241419'
     fg: '#d8d8d8'
-    dim: '#6b5f66'
+    dim: '#83797e'
     accent: '#d70a53'
 
 - slug: fedora
@@ -35,7 +35,7 @@
     panel: '#0d1218'
     border: '#161e28'
     fg: '#d8d8d8'
-    dim: '#5e6773'
+    dim: '#767e88'
     accent: '#51a2da'
 
 - slug: ubuntu
@@ -45,5 +45,5 @@
     panel: '#150f0b'
     border: '#261a13'
     fg: '#d8d8d8'
-    dim: '#6f6259'
+    dim: '#857a72'
     accent: '#e95420'
