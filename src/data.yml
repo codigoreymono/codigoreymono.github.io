@@ -28,19 +28,15 @@ about:
   status:
     branch: main
     since: 2026
-    ahead: 0
-    behind: 0
-    modified: 0
-    untracked: 0
 
   bio:
-    - icon: M
+    - icon: '>'
       text: Andrés Contreras
-    - icon: M
+    - icon: '>'
       text: Data Engineer & Mechatronics Engineer
-    - icon: M
+    - icon: '>'
       text: Python · SQL
-    - icon: M
+    - icon: '>'
       text: Linux · NixOS
 
   paths:
