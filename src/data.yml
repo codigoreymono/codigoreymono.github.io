@@ -1,133 +1,111 @@
 site:
-  title: astro-distro
-  description: Astro + Tailwind fastfetch-style portfolio template. TUI components, themeable systems, projects synced from GitHub via YAML.
+  title: Andrés Contreras
+  description: Data Engineer and Mechatronics Engineer. Python, SQL, Linux, NixOS.
   url: https://example.com
-  author: astro
-  handle_suffix: distro
+  author: Andrés Contreras
+  handle_suffix: ''
   image: /og.png
   image_width: 1200
   image_height: 630
-  theme_color: '#1793d1'
-  job_title: astro-distro template
+  theme_color: '#7ebae4'
+  job_title: Data Engineer
   social:
     github: ''
   twitter: ''
   locale: en
   type: website
-  default_theme: debian
+  default_theme: nixos
   footer:
     status: session closed
     errors: 0
     warnings: 0
     uptime: 5y
 
-current: debian
+current: nixos
 booted_at: '2026-08-20T10:00:00Z'
+
 host:
   name: devbox
   cpu: AMD Ryzen 7 7700
   gpu: AMD Radeon RX 7700 XT
   memory: 32 GB DDR5
   resolution: 2560x1440
+
 about:
   command: lazygit --view bio
+
   status:
     branch: main
     since: 2026
-    ahead: 1
+    ahead: 0
     behind: 0
-    modified: 2
+    modified: 0
     untracked: 0
+
   bio:
     - icon: M
-      text: Astro + Tailwind template for fastfetch-style portfolios
+      text: Andrés Contreras
     - icon: M
-      text: Single source of truth — content in YAML, generated in JSON
+      text: Data Engineer & Mechatronics Engineer
     - icon: M
-      text: 26 distro themes, switchable from the header with no flash
+      text: Python · SQL
     - icon: M
-      text: Projects synced from GitHub, cached locally for 1 hour
-    - icon: M
-      text: SEO out of the box — OG, Twitter, JSON-LD, robots.txt
-    - icon: M
-      text: TypeScript strict, biome, bun test, GitHub Actions
-    - icon: ??
-      text: Fork this repo and edit data.yml to make it yours
+      text: Linux · NixOS
+
   paths:
     - name: main
       current: true
-    - name: feature/themes
-    - name: feature/seo
-    - name: feature/sync-script
-    - name: feature/yaml-config
-    - name: fix/components
-    - name: docs/readme
+    - name: data-engineering
+    - name: python
+    - name: sql
+    - name: linux/nixos
 uses:
-  command: btop --view stack — daily usage && hardware
-  cpu:
-    label: CPU [daily usage]
-    usage:
-      - label: editor
-        percent: 100
-        detail: zed / vscode
-      - label: terminal
-        percent: 60
-        detail: alacritty + tmux
-      - label: browser
-        percent: 20
-        detail: firefox / brave
-      - label: notes
-        percent: 10
-        detail: obsidian
-        note: (markdown sync)
-      - label: music
-        percent: 10
-        detail: navidrome
-        note: (lastfm scrobbling)
-      - label: theme
-        percent: 50
-        detail: tokyo night
-      - label: font
-        percent: 40
-        detail: JetBrains Mono
-  memory:
-    used: 16
-    total: 32
-    theme: tokyo night
-    themePercent: 50
-  hardware:
-    label: hardware
-    device: devbox
-    ram: 32 GB DDR5
-    os: Debian 13 Trixie
-  peripherals:
-    label: peripherals
-    keyboard: Keychron K6
-    mouse: Logitech G Pro
-    headphones: generic
-    monitor: 2 x 27" 1440p
+  command: htop --view stack
+
+  stack:
+    - label: editor
+      detail: vim · vscode
+    - label: terminal
+      detail: foot
+    - label: browser
+      detail: firefox
+    - label: languages
+      detail: python · sql · nix
+    - label: database
+      detail: postgresql
+
+  system:
+    - label: os
+      detail: NixOS
+    - label: wm
+      detail: Hyprland
+    - label: shell
+      detail: Quickshell
+
+  tools:
+    - label: VCS
+      detail: git
+    - label: containers
+      detail: docker
+    - label: database
+      detail: dbeaver · harlequin
+
 contact:
-  command: mutt -f user@example.com
-  email: user@example.com
+  command: mutt --view contacts
+
   inbox:
-    - from: github.com
-      date: 15 Aug 2024
-      href: https://github.com
-    - from: hello@example.com
-      date: 10 Jan 2025
-      href: mailto:hello@example.com
-    - from: example.com
-      date: 10 Jan 2025
-      href: https://example.com
-  hints:
-    - key: j/k
-      action: next
-    - key: enter
-      action: open
-    - key: q
-      action: quit
+    - from: github
+      href: https://github.com/codigoreymono
+
+    - from: linkedin
+      href: https://www.linkedin.com/in/juan-andres-contreras-arias-871375192
+
+    - from: email
+      href: mailto:adwind007@gmail.com
+
 projects_ui:
-  command: ranger /home/astro/projects
-  root: /home/astro
+  command: yazi /home/reymono/projects
+  root: /home/reymono
+
 projects:
-  - https://github.com/withastro/astro
+  - https://github.com/codigoreymono/nixos-config

@@ -41,6 +41,11 @@ const CACHE_PATH = resolve(ROOT, ".cache/sync.json");
 
 const DEFAULT_TTL_MS = 60 * 60 * 1000; // 1 hour
 
+interface UseItem {
+	label: string;
+	detail: string;
+}
+
 interface Data {
 	site: {
 		title: string;
@@ -79,18 +84,15 @@ interface Data {
 		bio: { icon: string; text: string }[];
 		paths: { name: string; current?: boolean }[];
 	};
-	uses: {
-		command: string;
-		cpu: Record<string, unknown>;
-		memory: Record<string, unknown>;
-		hardware: Record<string, unknown>;
-		peripherals: Record<string, unknown>;
-	};
+uses: {
+	command: string;
+	stack: UseItem[];
+	system: UseItem[];
+	tools: UseItem[];
+};
 	contact: {
 		command: string;
-		email: string;
-		inbox: { from: string; date: string; href: string }[];
-		hints: Record<string, unknown>[];
+		inbox: { from: string; href: string }[];
 	};
 	projects_ui: {
 		command: string;

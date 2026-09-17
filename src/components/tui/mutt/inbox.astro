@@ -1,8 +1,6 @@
 ---
 export interface Mail {
-  selected?: boolean;
   from: string;
-  date: string;
   href: string;
 }
 
@@ -13,20 +11,17 @@ export interface Props {
 const { mails } = Astro.props;
 ---
 
-<div class="font-mono my-2">
-  {mails.map(({ from, date, href }) => (
-    <a
-      class="grid grid-cols-12 gap-x-4 group"
-      href={href}
-      target={href.startsWith("mailto:") ? undefined : "_blank"}
-      rel={href.startsWith("mailto:") ? undefined : "noopener"}
-    >
-      <span class="col-span-3 hover:cursor-pointer group-hover:text-accent text-c2">
+<div class="font-mono my-2 flex flex-col gap-1">
+  {
+    mails.map(({ from, href }) => (
+      <a
+        class="w-fit text-c2 hover:text-accent hover:cursor-pointer"
+        href={href}
+        target={href.startsWith("mailto:") ? undefined : "_blank"}
+        rel={href.startsWith("mailto:") ? undefined : "noopener"}
+      >
         {from}
-      </span>
-      <span class="col-span-9 flex justify-end text-dim">
-        {date}
-      </span>
-    </a>
-  ))}
+      </a>
+    ))
+  }
 </div>

@@ -1,0 +1,39 @@
+---
+import Container from "@/components/tui/commons/container.astro";
+import Content from "@/components/tui/commons/content.astro";
+import Label from "@/components/tui/commons/label.astro";
+
+interface Item {
+  label: string;
+  detail: string;
+}
+
+export interface Props {
+  title: string;
+  items: Item[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<Container>
+  <Label>{title}</Label>
+
+  <Content>
+    <div class="font-mono grid grid-cols-12 gap-x-3 gap-y-1">
+      {
+        items.map(({ label, detail }) => (
+          <Fragment>
+            <span class="col-span-4 sm:col-span-3 md:col-span-2 text-dim">
+              {label}
+            </span>
+
+            <span class="col-span-8 sm:col-span-9 md:col-span-10 text-accent">
+              {detail}
+            </span>
+          </Fragment>
+        ))
+      }
+    </div>
+  </Content>
+</Container>
