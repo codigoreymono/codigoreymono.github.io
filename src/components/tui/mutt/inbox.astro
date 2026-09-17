@@ -15,7 +15,7 @@ const { mails } = Astro.props;
   {
     mails.map(({ from, href }) => (
       <a
-        class="w-fit text-c2 hover:text-accent hover:cursor-pointer"
+        class="w-fit text-fg hover:text-accent hover:cursor-pointer"
         href={href}
         target={href.startsWith("mailto:") ? undefined : "_blank"}
         rel={href.startsWith("mailto:") ? undefined : "noopener"}

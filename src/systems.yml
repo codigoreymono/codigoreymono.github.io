@@ -7,9 +7,6 @@
     fg: '#d8d8d8'
     dim: '#5b6775'
     accent: '#5277c3'
-    c1: '#5277c3'
-    c2: '#8aa7e0'
-    c3: '#2d467a'
 
 - slug: arch
   font: Iosevka Term
@@ -20,9 +17,6 @@
     fg: '#d8d8d8'
     dim: '#5e6470'
     accent: '#1793d1'
-    c1: '#1793d1'
-    c2: '#7eb8d8'
-    c3: '#0d5a85'
 
 - slug: debian
   font: JetBrains Mono
@@ -33,9 +27,6 @@
     fg: '#d8d8d8'
     dim: '#6b5f66'
     accent: '#d70a53'
-    c1: '#d70a53'
-    c2: '#e8608f'
-    c3: '#8c0736'
 
 - slug: fedora
   font: DejaVu Sans Mono
@@ -46,9 +37,6 @@
     fg: '#d8d8d8'
     dim: '#5e6773'
     accent: '#51a2da'
-    c1: '#51a2da'
-    c2: '#a3cded'
-    c3: '#294172'
 
 - slug: ubuntu
   font: Ubuntu Mono
@@ -59,6 +47,3 @@
     fg: '#d8d8d8'
     dim: '#6f6259'
     accent: '#e95420'
-    c1: '#e95420'
-    c2: '#f3a68b'
-    c3: '#772953'

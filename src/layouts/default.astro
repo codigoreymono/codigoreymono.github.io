@@ -16,17 +16,10 @@ interface Props {
 
 const { title, description, theme = DEFAULT_THEME, lang = "en" } = Astro.props;
 
-const distroVisibilityCss = [
-  "[data-distro]{display:none}",
-  ...themes.map(
-    (slug) => `[data-theme="${slug}"] [data-distro="${slug}"]{display:revert}`,
-  ),
-].join("");
-
 const themeColorsCss = config.systems
   .map(
     (s) =>
-      `[data-theme="${s.slug}"]{--color-bg:${s.colors.bg};--color-panel:${s.colors.panel};--color-border:${s.colors.border};--color-fg:${s.colors.fg};--color-dim:${s.colors.dim};--color-accent:${s.colors.accent};--color-c1:${s.colors.c1};--color-c2:${s.colors.c2};--color-c3:${s.colors.c3};}`,
+      `[data-theme="${s.slug}"]{--color-bg:${s.colors.bg};--color-panel:${s.colors.panel};--color-border:${s.colors.border};--color-fg:${s.colors.fg};--color-dim:${s.colors.dim};--color-accent:${s.colors.accent};}`,
   )
   .join("");
 
@@ -53,7 +46,6 @@ const themeFontsCss = config.systems
         document.documentElement.dataset.theme = stored;
       }
     </script>
-    <style is:global set:html={distroVisibilityCss}></style>
     <style is:global set:html={themeColorsCss}></style>
     <style is:global set:html={themeFontsCss}></style>
   </head>
