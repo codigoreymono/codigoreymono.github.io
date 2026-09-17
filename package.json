@@ -1,5 +1,5 @@
 {
-	"name": "astro-distro",
+	"name": "codigoreymono-portfolio",
 	"type": "module",
 	"version": "0.0.1",
 	"engines": {
@@ -13,6 +13,7 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"check": "biome check --write",
+		"typecheck": "astro check",
 		"test": "bun test",
 		"sync": "bun run scripts/sync.ts"
 	},

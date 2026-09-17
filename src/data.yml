@@ -3,7 +3,6 @@ site:
   description: Data Engineer and Mechatronics Engineer. Python, SQL, Linux and NixOS.
   url: https://codigoreymono.github.io
   author: Andrés Contreras
-  handle_suffix: ''
   image: /og.png
   image_width: 1200
   image_height: 630
@@ -14,7 +13,6 @@ site:
     github: codigoreymono
     linkedin: juan-andres-contreras-arias-871375192
 
-  twitter: ''
   locale: en
   type: website
   default_theme: nixos

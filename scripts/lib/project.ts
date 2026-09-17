@@ -103,7 +103,7 @@ export async function fetchRepo(
 	const url = `https://api.github.com/repos/${owner}/${repo}`;
 	const headers: Record<string, string> = {
 		Accept: "application/vnd.github+json",
-		"User-Agent": "astro-distro-sync",
+		"User-Agent": "codigoreymono-portfolio",
 		"X-GitHub-Api-Version": "2022-11-28",
 	};
 	const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;

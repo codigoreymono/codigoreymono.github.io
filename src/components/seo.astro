@@ -27,7 +27,6 @@ const ogImage = image
 
 const sameAs = [
   social.github && `https://github.com/${social.github}`,
-  social.twitter && `https://twitter.com/${social.twitter}`,
   social.linkedin && `https://linkedin.com/in/${social.linkedin}`,
 ].filter(Boolean);
 
@@ -65,16 +64,6 @@ const jsonLd = {
 <meta property="og:image:height" content={String(site.image_height)}>
 <meta property="og:locale" content={site.locale}>
 <meta property="og:site_name" content={site.title}>
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content={canonical}>
-<meta name="twitter:title" content={fullTitle}>
-<meta name="twitter:description" content={desc}>
-<meta name="twitter:image" content={ogImage}>
-{site.twitter && (
-  <meta name="twitter:creator" content={site.twitter} />
-)}
 
 <!-- Misc -->
 <meta name="author" content={site.author}>
