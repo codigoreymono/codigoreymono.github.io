@@ -1,0 +1,261 @@
+---
+const nodes = [
+  { x: "7%", y: "12%", square: false },
+  { x: "18%", y: "27%", square: true },
+  { x: "29%", y: "9%", square: false },
+  { x: "43%", y: "18%", square: false },
+  { x: "61%", y: "8%", square: true },
+  { x: "78%", y: "21%", square: false },
+  { x: "92%", y: "11%", square: false },
+
+  { x: "10%", y: "43%", square: true },
+  { x: "24%", y: "55%", square: false },
+  { x: "38%", y: "39%", square: false },
+  { x: "67%", y: "47%", square: true },
+  { x: "84%", y: "38%", square: false },
+  { x: "95%", y: "58%", square: false },
+
+  { x: "6%", y: "73%", square: false },
+  { x: "21%", y: "86%", square: true },
+  { x: "35%", y: "68%", square: false },
+  { x: "53%", y: "82%", square: false },
+  { x: "71%", y: "71%", square: true },
+  { x: "87%", y: "89%", square: false },
+  { x: "96%", y: "76%", square: false },
+
+  { x: "3%", y: "24%", square: false },
+  { x: "14%", y: "64%", square: false },
+  { x: "31%", y: "94%", square: true },
+  { x: "74%", y: "4%", square: false },
+  { x: "90%", y: "49%", square: true },
+  { x: "98%", y: "32%", square: false },
+];
+---
+
+<div class="ambient-background" aria-hidden="true">
+  <svg class="ambient-routes" width="100%" height="100%">
+    <!-- horizontal izquierda -->
+    <line x1="8%" y1="32%" x2="25%" y2="32%" />
+
+    <!-- vertical derecha: intencionalmente estática -->
+    <line x1="82%" y1="18%" x2="82%" y2="36%" />
+
+    <!-- pipeline inferior derecho -->
+    <line x1="68%" y1="67%" x2="78%" y2="67%" />
+    <line x1="78%" y1="67%" x2="78%" y2="78%" />
+    <line x1="78%" y1="78%" x2="92%" y2="78%" />
+  </svg>
+
+  <!-- paquetes de datos -->
+  <span class="ambient-packet packet-horizontal"></span>
+  <span class="ambient-packet packet-pipeline"></span>
+
+  <!-- nodos -->
+  {
+    nodes.map(({ x, y, square }, index) => (
+      <span
+        class:list={[
+          "ambient-node",
+          { square },
+          { drift: [2, 7, 12, 17].includes(index) },
+          { pulse: [0, 6, 11, 18].includes(index) },
+        ]}
+        style={`left:${x}; top:${y};`}
+      />
+    ))
+  }
+
+  <!-- mantiene limpia la zona central -->
+  <div class="ambient-quiet-zone"></div>
+</div>
+
+<style>
+  .ambient-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .ambient-quiet-zone {
+    position: absolute;
+    inset-block: 0;
+    left: 50%;
+    width: min(64rem, 82vw);
+    transform: translateX(-50%);
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--color-bg) 22%,
+      var(--color-bg) 78%,
+      transparent 100%
+    );
+  }
+
+  .ambient-routes {
+    position: absolute;
+    inset: 0;
+  }
+
+  .ambient-routes line {
+    stroke: var(--color-accent);
+    stroke-width: 1;
+    opacity: 0.16;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .ambient-node {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--color-accent);
+    opacity: 0.24;
+  }
+
+  .ambient-node.square {
+    width: 5px;
+    height: 5px;
+    border-radius: 0;
+    opacity: 0.18;
+  }
+
+  /* movimiento lento de algunos nodos */
+  .ambient-node.drift {
+    animation: node-drift 24s ease-in-out infinite alternate;
+  }
+
+  /* pulso discreto de otros nodos */
+  .ambient-node.pulse {
+    animation: node-pulse 8s ease-in-out infinite;
+  }
+
+  .ambient-node.pulse:nth-of-type(3n) {
+    animation-delay: -2s;
+  }
+
+  .ambient-node.pulse:nth-of-type(4n) {
+    animation-delay: -4s;
+  }
+
+  .ambient-node.pulse:nth-of-type(5n) {
+    animation-delay: -6s;
+  }
+
+  /* paquetes que recorren las rutas */
+  .ambient-packet {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: var(--color-accent);
+    box-shadow: 0 0 8px var(--color-accent);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .packet-horizontal {
+    animation: packet-horizontal 14s linear infinite;
+  }
+
+  .packet-pipeline {
+    animation: packet-pipeline 20s linear infinite;
+    animation-delay: 4s;
+  }
+
+  @keyframes node-drift {
+    from {
+      transform: translate(0, 0);
+    }
+
+    to {
+      transform: translate(4px, -3px);
+    }
+  }
+
+  @keyframes node-pulse {
+    0%,
+    100% {
+      opacity: 0.12;
+    }
+
+    45% {
+      opacity: 0.12;
+    }
+
+    55% {
+      opacity: 0.38;
+    }
+
+    65% {
+      opacity: 0.12;
+    }
+  }
+
+  @keyframes packet-horizontal {
+    0% {
+      left: 8%;
+      top: 32%;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 0.65;
+    }
+
+    85% {
+      opacity: 0.65;
+    }
+
+    100% {
+      left: 25%;
+      top: 32%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes packet-pipeline {
+    0% {
+      left: 68%;
+      top: 67%;
+      opacity: 0;
+    }
+
+    8% {
+      opacity: 0.6;
+    }
+
+    35% {
+      left: 78%;
+      top: 67%;
+    }
+
+    60% {
+      left: 78%;
+      top: 78%;
+    }
+
+    92% {
+      opacity: 0.6;
+    }
+
+    100% {
+      left: 92%;
+      top: 78%;
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ambient-packet,
+    .ambient-node.drift,
+    .ambient-node.pulse {
+      animation: none;
+    }
+
+    .ambient-packet {
+      display: none;
+    }
+  }
+</style>

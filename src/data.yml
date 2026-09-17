@@ -93,4 +93,5 @@ projects_ui:
   root: /home/reymono
 
 projects:
+  -  https://github.com/codigoreymono/data-engineering-flake-templates
   - https://github.com/codigoreymono/nixos-config

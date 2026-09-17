@@ -1,4 +1,5 @@
 ---
+import AmbientBackground from "@/components/ambient-background.astro";
 import DistroToggle from "@/components/distro-toggle.astro";
 import Seo from "@/components/seo.astro";
 import config from "@/config.json";
@@ -52,12 +53,13 @@ const themeFontsCss = config.systems
   <body
     class="min-h-screen bg-bg p-6 font-mono text-sm sm:text-base leading-normal text-fg antialiased selection:bg-accent selection:text-bg md:py-12"
   >
-    <main class="mx-auto max-w-3xl">
+    <AmbientBackground />
+
+    <main class="relative z-10 mx-auto max-w-3xl">
       <slot />
     </main>
 
-    <!-- ── footer ────────────────────────────────────────── -->
-    <footer class="mx-auto max-w-3xl mt-10 text-dim">
+    <footer class="relative z-10 mx-auto max-w-3xl mt-10 text-dim">
       <div class="flex flex-wrap items-center justify-between gap-2 text-[0.85rem]">
         <div class="flex items-center gap-2">
           <span class="text-accent">●</span>
